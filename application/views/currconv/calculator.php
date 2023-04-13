@@ -7,16 +7,16 @@
     <label for="from">From</label>
     <select name="from">
         <option value="">--select--</option>
-        <?php foreach ($curr_list as $curr):  ?>
-        <option value="<?= $curr ?>" <?= $curr == $this->input->post('from') ? 'selected' : '' ?> ><?= $curr ?></option>
+        <?php foreach ($curr_list as $currencyCode => $info):  ?>
+        <option value="<?= $currencyCode ?>" <?= $currencyCode == $this->input->post('from') ? 'selected' : '' ?> ><?= $currencyCode ?></option>
         <?php endforeach ?>
     </select><br />
 
     <label for="to">To</label>
     <select name="to">
         <option value="">--select--</option>
-        <?php foreach ($curr_list as $curr):  ?>
-        <option value="<?= $curr ?>" <?= $curr == $this->input->post('to') ? 'selected' : '' ?> ><?= $curr ?></option>
+        <?php foreach ($curr_list as $currencyCode => $info):  ?>
+        <option value="<?= $currencyCode ?>" <?= $currencyCode == $this->input->post('to') ? 'selected' : '' ?> ><?= $currencyCode ?></option>
         <?php endforeach ?>
     </select><br />
     

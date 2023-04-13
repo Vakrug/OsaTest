@@ -21,9 +21,9 @@ class Currconv extends CI_Controller {
         private function list_json() {
             $json = file_get_contents("https://free.currconv.com/api/v7/currencies?apiKey={$this->currconv_api_key}");
             
-            //$json = json_encode(['USD', 'EUR', 'RUB']);
+            $results = json_decode($json, true);
             
-            return json_decode($json, true);
+            return $results['results'];
         }
         
         public function list() {
@@ -54,8 +54,6 @@ class Currconv extends CI_Controller {
 
                     $json = file_get_contents("https://free.currconv.com/api/v7/convert?q={$query}&compact=ultra&apiKey={$this->currconv_api_key}");
                     $obj = json_decode($json, true);
-                    
-                    //$obj = [$query => '1.5'];
 
                     $val = floatval($obj["$query"]);
 

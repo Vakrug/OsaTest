@@ -25,7 +25,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $config['base_url'] = 'http://localhost:8000/';
 
-$config['currconv_api_key'] = 'YOUR_API_KEY';
+//I know, this should not be stored in source control
+$config['currconv_api_key'] = 'dc74a3a0fc5cc6e73b71';
 
 /*
 |--------------------------------------------------------------------------
